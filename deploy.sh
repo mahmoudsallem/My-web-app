@@ -4,7 +4,7 @@
 set -e
 
 # --- Configuration ---
-REPO_URL="YOUR_GITHUB_REPO_URL" # e.g., https://github.com/your-username/your-repo.git
+REPO_URL="https://github.com/mahmoudsallem/My-web-app.git" # e.g., https://github.com/your-username/your-repo.git
 APP_DIR="/home/ec2-user/web-app" # Directory where the app will be deployed on EC2
 APP_NAME="web-app" # Name of your application directory after cloning
 
