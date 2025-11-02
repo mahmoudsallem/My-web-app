@@ -6,6 +6,7 @@ const app = express();
 const port = 3000;
 
 app.use(bodyParser.json());
+app.use(express.static(__dirname));
 
 app.post('/submit', (req, res) => {
     const userData = req.body;
@@ -21,7 +22,7 @@ app.post('/submit', (req, res) => {
                 console.error(err);
                 return res.status(500).send('Error saving user data.');
             }
-            res.status(200).send('User data saved successfully.');
+            res.redirect('/');
         });
     });
 });

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Our Web App</title>
+    <title>Vtoor - Hotel Booking</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <style>
         body {
@@ -13,7 +13,7 @@
             background-color: #f8f9fa;
         }
         .hero {
-            background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+            background: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
             background-size: cover;
             color: white;
             padding: 100px 0;
@@ -27,17 +27,23 @@
             flex: 1;
             padding: 50px 0;
         }
-        .form-container {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .card {
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
         }
         footer {
             background-color: #343a40;
             color: white;
             padding: 20px 0;
             text-align: center;
+        }
+        .gallery-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -46,23 +52,23 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">WebApp</a>
+                <a class="navbar-brand" href="index.html">Vtoor</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
+                            <a class="nav-link" href="login.html">Login</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -73,58 +79,93 @@
     <main>
         <section class="hero">
             <div class="container">
-                <h1>Welcome to Our Awesome Web App</h1>
-                <p class="lead">Submit your information below to get started</p>
+                <h1>Find Your Perfect Stay</h1>
+                <p class="lead">Book your next adventure with Vtoor</p>
+                <div class="row justify-content-center mt-4">
+                    <div class="col-md-8">
+                        <form class="row g-3">
+                            <div class="col-md-5">
+                                <input type="text" class="form-control" placeholder="Destination">
+                            </div>
+                            <div class="col-md-3">
+                                <input type="date" class="form-control">
+                            </div>
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" placeholder="Guests">
+                            </div>
+                            <div class="col-md-2">
+                                <button type="submit" class="btn btn-primary w-100">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="content">
             <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-md-6">
-                        <div class="form-container">
-                            <h2 class="text-center mb-4">User Information</h2>
-                            <form id="userInfoForm">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="name" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="email" class="form-label">Email address</label>
-                                    <input type="email" class="form-control" id="email" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="mobile" class="form-label">Mobile Number</label>
-                                    <input type="tel" class="form-control" id="mobile" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="location" class="form-label">Location</label>
-                                    <input type="text" class="form-control" id="location" required>
-                                </div>
-                                <button type="submit" class="btn btn-primary w-100">Submit</button>
-                            </form>
+                <h2 class="text-center mb-4">Our Top Destinations</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="Paris_Tour_Eiffel_jeune_femme_Adobe_Stock_Westend61_571157088_3ffdf9269c.webp" class="card-img-top" alt="Paris">
+                            <div class="card-body">
+                                <h5 class="card-title">Paris</h5>
+                                <p class="card-text">Explore the city of love and its iconic landmarks.</p>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                            </div>
                         </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Tokyo">
+                            <div class="card-body">
+                                <h5 class="card-title">Tokyo</h5>
+                                <p class="card-text">Experience the vibrant culture and futuristic technology of Japan.</p>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Bora Bora">
+                            <div class="card-body">
+                                <h5 class="card-title">Bora Bora</h5>
+                                <p class="card-text">Relax in the overwater bungalows and crystal-clear lagoons.</p>
+                                <a href="#" class="btn btn-primary">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="text-center my-4">Image Gallery</h2>
+                <div class="row">
+                    <div class="col-md-3 mb-4">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="gallery-img" alt="Hotel Room">
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <img src="https://images.unsplash.com/photo-1568495248636-6432b97bd949?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="gallery-img" alt="Hotel Pool">
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <img src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="gallery-img" alt="Hotel Lobby">
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="gallery-img" alt="Hotel Resort">
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 WebApp. All Rights Reserved.</p>
-        </div>
-    </footer>
-
     <!-- Modal -->
-    <div class="modal fade" id="responseModal" tabindex="-1" aria-labelledby="responseModalLabel" aria-hidden="true">
+    <div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="responseModalLabel">Success!</h5>
+                    <h5 class="modal-title" id="bookingModalLabel">Booking Confirmation</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="modalBody">
+                <div class="modal-body" id="bookingModalBody">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -133,42 +174,27 @@
         </div>
     </div>
 
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Vtoor. All Rights Reserved.</p>
+        </div>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script>
-        document.getElementById("userInfoForm").addEventListener("submit", function(event){
-            event.preventDefault();
+        const bookingModal = new bootstrap.Modal(document.getElementById('bookingModal'));
+        const bookingModalBody = document.getElementById('bookingModalBody');
+        const bookNowButtons = document.querySelectorAll('.btn-primary');
 
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const mobile = document.getElementById("mobile").value;
-            const location = document.getElementById("location").value;
-
-            const formData = {
-                name: name,
-                email: email,
-                mobile: mobile,
-                location: location
-            };
-
-            const responseModal = new bootstrap.Modal(document.getElementById('responseModal'));
-
-            fetch('/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById("modalBody").innerText = "Hello " + name + ", your data has been saved.";
-                responseModal.show();
-                document.getElementById("userInfoForm").reset();
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById("modalBody").innerText = 'Error saving data.';
-                responseModal.show();
+        bookNowButtons.forEach(button => {
+            button.addEventListener('click', function(event) {
+                if (this.innerText === 'Book Now') {
+                    event.preventDefault();
+                    const card = this.closest('.card');
+                    const destination = card.querySelector('.card-title').innerText;
+                    bookingModalBody.innerText = 'You have successfully booked a trip to ' + destination + '!';
+                    bookingModal.show();
+                }
             });
         });
     </script>
